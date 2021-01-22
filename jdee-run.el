@@ -719,7 +719,7 @@ panel to specifying the applet document."
 
 
 (defmethod jdee-run-vm-launch ((this jdee-run-vm))
-  (let ((run-buf-name (concat "*" (oref this :main-class) "*"))
+  (let ((run-buf-name (concat "*java-run " (oref this :main-class) "*"))
         (source-directory default-directory)
         (working-directory (if (string= jdee-run-working-directory "")
                                default-directory
