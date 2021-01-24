@@ -390,7 +390,7 @@ Ask the user for confirmation.  Also sets buffer local
          (not (string= package-name "")))
         (progn
           (set (make-local-variable 'jdee-gen-package-name) package-name)
-          (format "package %s;\n\n" package-name))))
+          (format "package %s;\n\n" package-name)))))
 
 (defcustom jdee-gen-method-signature-padding-1 ""
   "String that comes just after the function name and just before
