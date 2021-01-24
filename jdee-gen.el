@@ -383,14 +383,14 @@ Ask the user for confirmation.  Also sets buffer local
                   nil
                 (jdee-package-convert-directory-to-package package-dir))))
          (package-name
-          (or jdee-gen-package-name
-              (read-from-minibuffer "Package: " suggested-package-name))))
+          (or jdee-gen-package-name suggested-package-name)))
+              ;; (read-from-minibuffer "Package: " suggested-package-name))))
     (if (and
          package-name
          (not (string= package-name "")))
         (progn
           (set (make-local-variable 'jdee-gen-package-name) package-name)
-          (format "package %s;\n\n" package-name)))))
+          (format "package %s;\n\n" package-name))))
 
 (defcustom jdee-gen-method-signature-padding-1 ""
   "String that comes just after the function name and just before
