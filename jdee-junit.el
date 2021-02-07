@@ -454,7 +454,9 @@ tests generated with this template requires the JUnit test framework."
         (oset vm :main-class jdee-junit-testrunner-type )
         (jdee-run-set-app-args (concat (jdee-parse-get-package)
                                        (file-name-sans-extension
-                                        (file-name-nondirectory (buffer-file-name))) "Test"))
+                                        (file-name-nondirectory (buffer-file-name))) (if (string-match-p (regexp-quote "Test") (file-name-nondirectory (buffer-file-name)))
+                                                                                         nil
+                                                                                       "Test")))
         (cd working-directory)
         (jdee-run-vm-launch vm))
     (error "The jdee-junit-run command works only in a Java source buffer")))
