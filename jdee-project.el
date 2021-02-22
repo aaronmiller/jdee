@@ -162,6 +162,21 @@ the Application Project Creation dialog."
   (let ((dir (expand-file-name "src" (oref this dir))))
     (if (not (file-exists-p dir)) (make-directory dir)))
 
+  ;; Make main directory
+  (let ((dir (expand-file-name "src/main" (oref this dir))))
+    (if (not (file-exists-p dir)) (make-directory dir)))
+
+  ;; Make test directory
+  (let ((dir (expand-file-name "src/test" (oref this dir))))
+    (if (not (file-exists-p dir)) (make-directory dir)))
+
+  ;; Make java directories
+  (let ((dir (expand-file-name "src/main/java" (oref this dir))))
+    (if (not (file-exists-p dir)) (make-directory dir)))
+
+  (let ((dir (expand-file-name "src/test/java" (oref this dir))))
+    (if (not (file-exists-p dir)) (make-directory dir)))
+
   ;; Make classes directory
   (let ((dir (expand-file-name "classes" (oref this dir))))
     (when (not (file-exists-p dir))
